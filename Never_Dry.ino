@@ -38,6 +38,12 @@
  * GND to GND of the Arduino
  * A0 to A2 of the Arduino
  */
+/*
+ * Servo Motor
+ * red to +5V
+ * brown to GND
+ * orange to Digital Pin 9 
+ */
 
 #include <LiquidCrystal.h>
 #include <Servo.h>
