@@ -1,3 +1,44 @@
+/* 
+ * LCD Connection
+ * Connect LCD VSS to GND
+ * VDD to +5V
+ * V0 to Potentiometer Middle Pin
+ * RS to Arduino Digital Pin 12
+ * RW to GND
+ * E to Arduino Digital Pin 11
+ * D4 to Arduino Digital Pin 5
+ * D5 to Arduino Digital Pin 4
+ * D6 to Arduino Digital Pin 3
+ * D7 to Arduino Digital Pin 2
+ * A to +5V
+ * K to GND
+ */
+
+/*
+ * Potentiometer connection
+ * See the mark B10K, Now..
+ * B -> GND
+ * 10 -> Arduino V0
+ * K -> +5V
+ */
+
+/*
+ * Touch sensor
+ * SIG -> A1
+ */
+
+/*
+ * LM35 Sensor
+ * \+5V |A0 GND/ (When the pot is placed as ^ )
+ */
+
+/*
+ * Soil Moisture Sensor
+ * VCC to 5V of the Arduino
+ * GND to GND of the Arduino
+ * A0 to A2 of the Arduino
+ */
+
 #include <LiquidCrystal.h>
 #include <Servo.h>
 
