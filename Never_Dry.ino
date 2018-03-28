@@ -98,7 +98,7 @@ void loop() {
   }
 
   // If not raining, but the soil is moist, then nothing to do also
-  else if(humidity > 400)
+  else if(humidity < 400)
   {
     lcd.setCursor(0, 1);
     lcd.print("Soil too moist");
@@ -117,18 +117,21 @@ void loop() {
   { 
     waterPipe.write(135);
     lcd.setCursor(0,1);
-    lcd.print("Watering..");
+    lcd.print("Watering...");
     delay(7000); // Water for 7 seconds.
     
     lcd.setCursor(0,1);
-    lcd.print("Done... :)");
+    lcd.print("Done!      ");
     waterPipe.write(0);
-    delay(15); //wait to set the pipe in the right place again
+    delay(1000); //wait to set the pipe in the right place again
+    lcd.clear();
   }
+  
 
   else
   {
     lcd.setCursor(0,1);
     lcd.print("Plant is safe :)");
+    lcd.clear();
   }
 }
