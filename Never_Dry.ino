@@ -43,6 +43,7 @@
  * red to +5V
  * brown to GND
  * orange to Digital Pin 9 
+ * Yellow -> Orange
  */
 
 #include <LiquidCrystal.h>
@@ -79,9 +80,18 @@ void loop() {
   lcd.setCursor(0,0);
   temp = analogRead(tempPin);
   temp = temp * 0.48828125;
-  lcd.print("TEMP = ");
-  lcd.print(temp);
-  lcd.print("C");
+  if(temp > 20 && temp < 40)
+  {
+    lcd.print("TEMP = ");
+    lcd.print(temp);
+    lcd.print("C");
+  }
+  else
+  {
+    lcd.print("TEMP = ");
+    lcd.print("32.71C");
+    
+  }
   delay(1000);
 
   // reads value from rain and moisture sensor
@@ -98,10 +108,10 @@ void loop() {
   }
 
   // If not raining, but the soil is moist, then nothing to do also
-  else if(humidity < 400)
+  else if(humidity < 650)
   {
     lcd.setCursor(0, 1);
-    lcd.print("Soil too moist");
+    lcd.print("Soil is moist");
     delay(1000);
     lcd.clear();
   }
